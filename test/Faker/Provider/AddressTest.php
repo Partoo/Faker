@@ -4,12 +4,13 @@ namespace Faker\Test\Provider;
 
 use Faker\Generator;
 use Faker\Provider\Address;
+use PHPUnit\Framework\TestCase;
 
-class AddressTest extends \PHPUnit_Framework_TestCase
+final class AddressTest extends TestCase
 {
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Address($faker));

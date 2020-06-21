@@ -4,15 +4,16 @@ namespace Faker\Test\Provider\zh_TW;
 
 use Faker\Generator;
 use Faker\Provider\zh_TW\Person;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+final class PersonTest extends TestCase
 {
     /**
      * @var Generator
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -39,6 +40,6 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         }
 
         // Validate
-        $this->assertEquals(0, ($total % 10));
+        $this->assertEquals(0, $total % 10);
     }
 }

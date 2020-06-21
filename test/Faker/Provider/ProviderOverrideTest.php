@@ -1,11 +1,9 @@
 <?php
-/**
- * @author Mark van der Velden <mark@dynom.nl>
- */
 
 namespace Faker\Test\Provider;
 
 use Faker;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class ProviderOverrideTest
@@ -16,7 +14,7 @@ use Faker;
  * locale specific provider (can) has specific implementations. The goal of this test is to test the common denominator
  * and to try to catch possible invalid multi-byte sequences.
  */
-class ProviderOverrideTest extends \PHPUnit_Framework_TestCase
+final class ProviderOverrideTest extends TestCase
 {
     /**
      * Constants with regular expression patterns for testing the output.

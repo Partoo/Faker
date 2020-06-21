@@ -4,15 +4,16 @@
 namespace Faker\Provider\en_US;
 
 use Faker\Generator;
+use PHPUnit\Framework\TestCase;
 
-class PaymentTest extends \PHPUnit_Framework_TestCase
+final class PaymentTest extends TestCase
 {
     /**
      * @var Generator
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Payment($faker));

@@ -5,8 +5,9 @@ namespace Faker\Test\Provider\pt_PT;
 use Faker\Generator;
 use Faker\Provider\pt_PT\Address;
 use Faker\Provider\pt_PT\Person;
+use PHPUnit\Framework\TestCase;
 
-class AddressTest extends \PHPUnit_Framework_TestCase
+final class AddressTest extends TestCase
 {
 
     /**
@@ -14,7 +15,7 @@ class AddressTest extends \PHPUnit_Framework_TestCase
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Address($faker));

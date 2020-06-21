@@ -4,15 +4,16 @@ namespace Faker\Test\Provider\ng_NG;
 
 use Faker\Generator;
 use Faker\Provider\en_NG\Person;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+final class PersonTest extends TestCase
 {
      /**
      * @var Generator
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));

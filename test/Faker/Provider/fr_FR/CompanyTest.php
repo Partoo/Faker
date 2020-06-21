@@ -5,12 +5,13 @@ namespace Faker\Test\Provider\fr_FR;
 use Faker\Calculator\Luhn;
 use Faker\Generator;
 use Faker\Provider\fr_FR\Company;
+use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends \PHPUnit_Framework_TestCase
+final class CompanyTest extends TestCase
 {
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
@@ -65,7 +66,7 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class TestableCompany extends Company
+final class TestableCompany extends Company
 {
     public static function isCatchPhraseValid($catchPhrase)
     {

@@ -4,15 +4,16 @@ namespace Faker\Test\Provider\es_PE;
 
 use Faker\Generator;
 use Faker\Provider\es_PE\Person;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+final class PersonTest extends TestCase
 {
     /**
      * @var Generator
      */
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->seed(1);

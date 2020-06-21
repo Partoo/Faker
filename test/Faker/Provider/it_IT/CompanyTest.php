@@ -4,10 +4,11 @@ namespace Faker\Test\Provider\it_IT;
 
 use Faker\Generator;
 use Faker\Provider\it_IT\Company;
+use PHPUnit\Framework\TestCase;
 
-class CompanyTest extends \PHPUnit_Framework_TestCase
+final class CompanyTest extends TestCase
 {
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Company($faker));
@@ -19,5 +20,5 @@ class CompanyTest extends \PHPUnit_Framework_TestCase
         $vatId = $this->faker->vatId();
         $this->assertRegExp('/^IT[0-9]{11}$/', $vatId);
     }
-    
+
 }

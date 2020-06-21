@@ -5,12 +5,13 @@ namespace Faker\Test\Provider\en_ZA;
 use Faker\Generator;
 use Faker\Provider\en_ZA\Person;
 use Faker\Provider\DateTime;
+use PHPUnit\Framework\TestCase;
 
-class PersonTest extends \PHPUnit_Framework_TestCase
+final class PersonTest extends TestCase
 {
     private $faker;
 
-    public function setUp()
+    protected function setUp()
     {
         $faker = new Generator();
         $faker->addProvider(new Person($faker));
@@ -50,5 +51,19 @@ class PersonTest extends \PHPUnit_Framework_TestCase
         $validLicenceCodes = array('A', 'A1', 'B', 'C', 'C1', 'C2', 'EB', 'EC', 'EC1', 'I', 'L', 'L1');
 
         $this->assertContains($this->faker->licenceCode, $validLicenceCodes);
+    }
+
+    public function testMaleTitles()
+    {
+        $validMaleTitles = array('Mr.', 'Dr.', 'Prof.', 'Rev.', 'Hon.');
+
+        $this->assertContains(Person::titleMale(), $validMaleTitles);
+    }
+
+    public function testFemaleTitles()
+    {
+        $validateFemaleTitles = array('Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.', 'Rev.', 'Hon.');
+
+        $this->assertContains(Person::titleFemale(), $validateFemaleTitles);
     }
 }

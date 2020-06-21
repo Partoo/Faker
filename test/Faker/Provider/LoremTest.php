@@ -3,8 +3,9 @@
 namespace Faker\Test\Provider;
 
 use Faker\Provider\Lorem;
+use PHPUnit\Framework\TestCase;
 
-class LoremTest extends \PHPUnit_Framework_TestCase
+final class LoremTest extends TestCase
 {
     /**
      * @expectedException \InvalidArgumentException
@@ -88,7 +89,7 @@ class LoremTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class TestableLorem extends Lorem
+final class TestableLorem extends Lorem
 {
 
     public static function word()
